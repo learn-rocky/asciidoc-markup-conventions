@@ -64,7 +64,7 @@ testsall: images
 
 .gen:
 	(cd asciidoc-markup-sample-doc && asciidoctor -b html asciidoc-markup-samples.adoc  )
-	(cd asciidoc-markup-sample-doc && asciidoctor -b html5 asciidoc-markup-samples.adoc  )
+	(cd asciidoc-markup-sample-doc && asciidoctor-pdf  asciidoc-markup-samples.adoc  )
 	touch $@
 
 
