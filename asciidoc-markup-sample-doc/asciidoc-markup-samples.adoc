@@ -145,7 +145,7 @@ a|
 image::image.png[width=100px]
 ....
 a| .Tux
-image::image.png[width=100px]
+image::rockylinux-icon.jpg[width=100px]
 
 
 |Inline operations and user input
