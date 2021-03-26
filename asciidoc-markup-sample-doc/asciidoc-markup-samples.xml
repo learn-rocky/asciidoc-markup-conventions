@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>AsciiDoc Mark-up Quick Reference for Red&#160;Hat Documentation</title>
+<date>2021-03-26</date>
+</info>
+<section xml:id="_overview_of_asciidoc_markup_elements_used_in_redhat_documentation">
+<title>Overview of AsciiDoc Markup Elements used in Red&#160;Hat Documentation</title>
+<note>
+<simpara>Some markup examples used in this overview are based on new Asciidoctor features and they are not a part of the standard set of elements. Please, use the <literal>:experimental:</literal> tag in the header of your document to enable this functionality.</simpara>
+</note>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="27.2727*"/>
+<colspec colname="col_2" colwidth="36.3636*"/>
+<colspec colname="col_3" colwidth="36.3637*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Element</entry>
+<entry align="left" valign="top">Mark-up</entry>
+<entry align="left" valign="top">Example rendered output</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Anchor</simpara>
+<note>
+<simpara>The <literal>{context}</literal> variable is recommended for making modules reusable. Example: <literal>[id="section-header_{context}"]</literal>. For details, see the <link xl:href="https://redhat-documentation.github.io/modular-docs/#reusing-modules">Modular Documentation Reference Guide</link>.</simpara>
+</note></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">[id="section-header_{variable}"]
+Section Header</literallayout></entry>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Section Header</emphasis></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Application name</simpara></entry>
+<entry align="left" valign="top"><simpara>No special markup</simpara></entry>
+<entry align="left" valign="top"><simpara>The foo application.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Code blocks</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">[source,java]
+----
+public class HelloWorld {
+   public static void main(String[] args) {
+      System.out.println("Hello, World");
+   }
+}
+----</literallayout></entry>
+<entry align="left" valign="top"><programlisting language="java" linenumbering="unnumbered">public class HelloWorld {
+   public static void main(String[] args) {
+      System.out.println("Hello, World");
+   }
+}</programlisting></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Code - inline</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">`print("Hello, World!")`</literallayout></entry>
+<entry align="left" valign="top"><simpara><literal>print("Hello, World!")</literal></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Command block</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">----
+$ echo "Hello, World!" &gt; hello.txt
+----</literallayout></entry>
+<entry align="left" valign="top"><screen>$ echo "Hello, World!" &gt; hello.txt</screen></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Command - inline</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Use the [command]`oc get` command to get a list of services.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Use the <literal role="command">oc get</literal> command to get a list of services.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Emphasis for a term</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Use _this_ approach.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Use <emphasis>this</emphasis> approach.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Filenames or directory paths</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Edit the [filename]`kubeconfig` file as required and save your changes.
+
+The [filename]`express.conf` configuration file is located in the [filename]`/usr/share/` directory.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Edit the <literal role="filename">kubeconfig</literal> file as required and save your changes.</simpara>
+<simpara>The <literal role="filename">express.conf</literal> configuration file is located in the <literal role="filename">/usr/share/</literal> directory.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>GUI Text</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">The web browser displays *404* for an unreachable URL.</literallayout></entry>
+<entry align="left" valign="top"><simpara>The web browser displays <emphasis role="strong">404</emphasis> for an unreachable URL.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>GUI Button</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Click btn:[Save As] to save the file under a different name.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Click <guibutton>Save As</guibutton> to save the file under a different name.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>GUI Menu</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Navigate to menu:File[Import&gt;Import csv] to import a csv file.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Navigate to <menuchoice><guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> <guimenuitem>Import csv</guimenuitem></menuchoice> to import a csv file.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Inline Image</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">image::image.png[width=25px]</literallayout></entry>
+<entry align="left" valign="top"><informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image.png" contentwidth="25px"/>
+</imageobject>
+<textobject><phrase>image</phrase></textobject>
+</mediaobject>
+</informalfigure></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Block Image</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">.Tux
+image::image.png[width=100px]</literallayout></entry>
+<entry align="left" valign="top"><figure>
+<title>Tux</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image.png" contentwidth="100px"/>
+</imageobject>
+<textobject><phrase>image</phrase></textobject>
+</mediaobject>
+</figure></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Inline operations and user input</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">The `GET` operation can be used to do something.
+
+Answer by typing `Yes` or `No` when prompted.</literallayout></entry>
+<entry align="left" valign="top"><simpara>The <literal>GET</literal> operation can be used to do something.</simpara>
+<simpara>Answer by typing <literal>Yes</literal> or <literal>No</literal> when prompted.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Keyboard shortcuts</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">kbd:[Ctrl+Alt+Del]</literallayout></entry>
+<entry align="left" valign="top"><simpara><keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>Del</keycap></keycombo></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Link (external)</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">link:http://www.redhat.com[Red Hat]</literallayout></entry>
+<entry align="left" valign="top"><simpara><link xl:href="http://www.redhat.com">Red Hat</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Lists</simpara>
+<note>
+<simpara>Do not put steps in bold.</simpara>
+</note></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">.Ordered list
+
+. First item
+. Second item
+. Third item
+
+.Unordered list
+
+* This
+* That
+* The other
+
+.Definition or labeled list
+
+Term A:: description
+Term B:: description</literallayout></entry>
+<entry align="left" valign="top"><orderedlist numeration="arabic">
+<title>Ordered list</title>
+<listitem>
+<simpara>First item</simpara>
+</listitem>
+<listitem>
+<simpara>Second item</simpara>
+</listitem>
+<listitem>
+<simpara>Third item</simpara>
+</listitem>
+</orderedlist>
+<itemizedlist>
+<title>Unordered list</title>
+<listitem>
+<simpara>This</simpara>
+</listitem>
+<listitem>
+<simpara>That</simpara>
+</listitem>
+<listitem>
+<simpara>The other</simpara>
+</listitem>
+</itemizedlist>
+<variablelist>
+<title>Definition  or labeled list</title>
+<varlistentry>
+<term>Term A</term>
+<listitem>
+<simpara>description</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Term B</term>
+<listitem>
+<simpara>description</simpara>
+</listitem>
+</varlistentry>
+</variablelist></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Literal value</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">The function returns `true`.</literallayout></entry>
+<entry align="left" valign="top"><simpara>The function returns <literal>true</literal>.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Package</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Install the [package]`iscsi-initiators-utils` package.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Install the <literal role="package">iscsi-initiators-utils</literal> package.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Product name</simpara></entry>
+<entry align="left" valign="top"><simpara>No special markup. Use {nbsp} in the company and product names. Example: Red{nbsp}Hat JBoss{nbsp}Data{nbsp}Grid</simpara></entry>
+<entry align="left" valign="top"><simpara>Red&#160;Hat JBoss&#160;Data&#160;Grid</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Reference to Red Hat guides</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">See the JBoss EAP link:guide-url[_Getting Started Guide_] for more information.</literallayout></entry>
+<entry align="left" valign="top"><simpara>See the JBoss EAP <link xl:href="guide-url"><emphasis>Getting Started Guide</emphasis></link> for more information.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>System or software variable to be replaced by the user</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Use the following command to roll back a deployment, specifying the deployment name: `oc rollback _deployment_`.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Use the following command to roll back a deployment, specifying the deployment name: <literal>oc rollback <emphasis>deployment</emphasis></literal>.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>System or software configuration parameter or environment variable</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Use the `_IP_ADDRESS_` environment variable for the server IP address.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Use the <literal><emphasis>IP_ADDRESS</emphasis></literal> environment variable for the server IP address.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>System item, daemon, or service</simpara></entry>
+<entry align="left" valign="top"><literallayout class="monospaced">Include the `libfreetype` library.
+
+Stop the `NetworkManager` daemon.
+
+Start the `mysql` service.</literallayout></entry>
+<entry align="left" valign="top"><simpara>Include the <literal>libfreetype</literal> library.</simpara>
+<simpara>Stop the <literal>NetworkManager</literal> daemon.</simpara>
+<simpara>Start the <literal>mysql</literal> service.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section xml:id="_additional_resources">
+<title>Additional Resources</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xl:href="http://asciidoctor.org/docs/user-manual/">Asciidoctor User Manual</link>.</simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://asciidoctor.org/docs/asciidoc-writers-guide/">Asciidoctor Writer&#8217;s Guide</link>.</simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">AsciiDoc Syntax Quick Reference</link>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</article>
