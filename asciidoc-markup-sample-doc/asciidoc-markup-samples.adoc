@@ -2,9 +2,9 @@
 :source-highlighter: prettify
 :docinfo1:
 
-= AsciiDoc Mark-up Quick Reference for Red{nbsp}Hat Documentation
+= AsciiDoc Mark-up Quick Reference for Rocky{nbsp}Linux Documentation
 
-== Overview of AsciiDoc Markup Elements used in Red{nbsp}Hat Documentation
+== Overview of AsciiDoc Markup Elements used in Rocky{nbsp}Linux Documentation
 
 [NOTE]
 ====
