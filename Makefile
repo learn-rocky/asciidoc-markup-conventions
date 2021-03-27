@@ -1,3 +1,4 @@
+# TODOs: cleanup this makefile.
 .PHONY: \
 	force-rebuild \
 	install \
